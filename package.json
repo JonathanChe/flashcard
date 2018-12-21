@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "start": "nodemon ./server/server.js",
     "build": "webpack --mode development",
     "webpack": "webpack-dev-server --mode development",
@@ -14,6 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^6.2.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
     "express": "^4.16.4",
     "pg-promise": "^8.5.4",
     "react": "^16.7.0",
@@ -25,14 +27,22 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "concurrently": "^4.1.0",
     "css-loader": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
     "nodemon": "^1.18.9",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js"
   }
 }
