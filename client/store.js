@@ -1,10 +1,11 @@
 // npm installs
-import { createStore, compose } from 'redux';
+import { createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 // rel path imports
 import rootReducer from './Reducers/rootReducer';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 
 // HMR for reducers
 if (module.hot) {
