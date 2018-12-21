@@ -12,7 +12,7 @@ const router = (
   <Provider store={store}>
     <BrowserRouter>
       <App />
-    </BrowserRouter>,
+    </BrowserRouter>
   </Provider>
 );
 
