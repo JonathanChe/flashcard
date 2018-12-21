@@ -19,7 +19,11 @@
     "express": "^4.16.4",
     "pg-promise": "^8.5.4",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "react-router": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
@@ -43,6 +47,9 @@
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
+    "collectCoverageFrom": [
+      "**/client/**/*.jsx"
+    ]
   }
 }
