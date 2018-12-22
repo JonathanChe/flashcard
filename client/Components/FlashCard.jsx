@@ -12,11 +12,11 @@ const FlashCard = (props) => {
     <div>
       <Card>
         <CardContent>
-          <Typography gutterBottom variant="headline" component="h1">
+          <Typography gutterBottom variant="headline" component="h1" align="center">
             Word
           </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions style={{ justifyContent: 'center' }}>
           <Button size="medium" color="primary" href="/">Check Definiton</Button>
         </CardActions>
       </Card>
