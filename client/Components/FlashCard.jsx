@@ -17,7 +17,7 @@ const FlashCard = (props) => {
           </Typography>
         </CardContent>
         <CardActions style={{ justifyContent: 'center' }}>
-          <Button size="medium" color="primary" href="/">Check Definiton</Button>
+          <Button size="medium" color="primary" href="/dist">Check Definiton</Button>
         </CardActions>
       </Card>
     </div>
