@@ -17,6 +17,7 @@ const styles = theme => ({
   },
   title: {
     display: 'none',
+    fontSize: '2rem',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
@@ -76,10 +77,13 @@ function SearchAppBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-            FlashCards
+            <i>FlashCards</i>
           </Typography>
           <Button color="inherit" size="medium" className={classes.button}>
             Add Card
+          </Button>
+          <Button color="inherit" size="medium" className={classes.button}>
+            Show Random
           </Button>
           <div className={classes.grow} />
           <div className={classes.search}>
