@@ -1,13 +1,48 @@
+// import React from 'react';
+// import { AppBar, Toolbar, Typography, TextField, Button } from '@material-ui/core';
+// import { withStyles } from '@material-ui/styles'
+
+// const styles = theme => ({
+//   root: {
+//     width: '100%',
+//   },
+//   button: {
+
+//   }
+// });
+
+// const NavBar = () => {
+//   return (
+//     <AppBar position="static">
+//       <Toolbar>
+//         <Typography variant="title" color="inherit">
+//           FlashCards
+//         </Typography>
+//         <div className={}>
+//           <Button
+//             variant="contained"
+//             size="medium"
+//             color="inherit"
+//             href="/dist"
+//           >
+//             Add New Card
+//           </Button>
+//         </div>
+//       </Toolbar>
+//     </AppBar>
+//   );
+// };
+
+// export default NavBar;
+
 import React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
+import Button from '@material-ui/core/Button';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
 const styles = theme => ({
@@ -17,15 +52,15 @@ const styles = theme => ({
   grow: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
   title: {
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
+  },
+  button: {
+    marginLeft: theme.spacing.unit * 5,
+    fontWeight: 'bold',
   },
   search: {
     position: 'relative',
@@ -70,18 +105,19 @@ const styles = theme => ({
   },
 });
 
-function NavBar(props) {
+function SearchAppBar(props) {
   const { classes } = props;
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-            <MenuIcon />
-          </IconButton>
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-            Flashcards
+            FlashCards
           </Typography>
+          <Button color="inherit" size="medium" className={classes.button}>
+            Add Card
+          </Button>
           <div className={classes.grow} />
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -101,8 +137,4 @@ function NavBar(props) {
   );
 }
 
-NavBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(NavBar);
+export default withStyles(styles)(SearchAppBar);
