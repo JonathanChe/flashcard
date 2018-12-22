@@ -1,3 +1,11 @@
 export const ADD_CARD = 'ADD_CART';
 
-export const DISPLAY_RANDOM = 'DISPLAY_RANDOM';
+export const DISPLAY_RANDOM_CARD = 'DISPLAY_RANDOM_CARD';
+
+export const DISPLAY_SELECTED_CARD = 'DISPLAY_SELECTED_CARD';
+
+export const ALL_CARDS = 'ALL_CARDS';
+
+export const TOTAL_CARDS = 'TOTAL_CARDS';
+
+export const SHOW_RANDOM_BOOLEAN = 'SHOW_RANDOM_BOOLEAN';
