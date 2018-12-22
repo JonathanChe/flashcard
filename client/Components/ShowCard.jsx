@@ -1,27 +1,25 @@
 import React from 'react';
 import {
   Card,
-  CardActions,
   CardContent,
-  Button,
   Typography,
 } from '@material-ui/core';
 
-const FlashCard = (props) => {
+const ShowCard = (props) => {
   return (
     <div>
       <Card>
         <CardContent>
           <Typography gutterBottom variant="headline" component="h1" align="center">
-            Word
+            <p>Word: </p>
+            <p>Type: </p>
+            <p>Definition: </p>
+            <p>Sentence: </p>
           </Typography>
         </CardContent>
-        <CardActions style={{ justifyContent: 'center' }}>
-          <Button size="medium" color="primary" href="/dist">Check Answer</Button>
-        </CardActions>
       </Card>
     </div>
   );
 };
 
-export default FlashCard;
+export default ShowCard;
