@@ -5,7 +5,8 @@ import {
   Button,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import TextFieldInput from './TextFieldInput';
+import { Field, reduxForm } from 'redux-form';
+import { TextField } from 'redux-form-material-ui';
 
 const styles = {
   paper: {
@@ -25,30 +26,47 @@ const styles = {
   button: {
     marginTop: '1em',
   },
+  inputStyle: {
+    flex: '1 0 auto',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 };
 
+/* eslint-disable */
 class AddCard extends Component {
 
-  handleCreate(event) {
-    console.log(event)
-  }
-
-  handleSubmit() {
-
-  }
-
   render() {
-    const { classes } = this.props;
+    const { classes, handleSubmit } = this.props;
+
     return (
       <Paper className={classes.paper}>
         <Typography align="center" gutterBottom variant="h2" className={classes.title}>
           Create New Card
         </Typography>
-        <form onSubmit={this.handleCreate} className={classes.form}>
-          <TextFieldInput inputType="word" />
-          <TextFieldInput inputType="type" />
-          <TextFieldInput inputType="definition" />
-          <TextFieldInput inputType="sentence" />
+        <form onSubmit={handleSubmit} className={classes.form}>
+          <Field
+            name="word"
+            component={TextField}
+            label="word"
+            className={classes.inputStyle}
+          />
+          <Field
+            name="type"
+            component={TextField}
+            label="type"
+          />
+          <Field
+            name="definition"
+            component={TextField}
+            label="definition"
+          />
+          <Field
+            name="sentence"
+            component={TextField}
+            label="sentence"
+          />
           <Button type="submit" size="large" color="primary" variant="contained" className={classes.button}>
             Create
           </Button>
@@ -58,4 +76,6 @@ class AddCard extends Component {
   }
 }
 
-export default withStyles(styles)(AddCard);
+export default reduxForm({
+  form: 'MaterialUiForm',
+})(withStyles(styles)(AddCard));
