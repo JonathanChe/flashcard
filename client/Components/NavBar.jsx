@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -25,6 +26,10 @@ const styles = theme => ({
   button: {
     marginLeft: theme.spacing.unit * 5,
     fontWeight: 'bold',
+  },
+  anchor: {
+    textDecoration: 'none',
+    color: 'white',
   },
   search: {
     position: 'relative',
@@ -76,15 +81,19 @@ function SearchAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
+
           <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-            <i>FlashCards</i>
+            <Link to="/" className={classes.anchor}>FlashCards</Link>
           </Typography>
-          <Button color="inherit" size="medium" className={classes.button}>
-            Add Card
-          </Button>
-          <Button color="inherit" size="medium" className={classes.button}>
-            Show Random
-          </Button>
+
+          <Typography className={classes.button}>
+            <Link to="/addCard" className={classes.anchor}> Add Card </Link>
+          </Typography>
+
+          <Typography className={classes.button}>
+            <Link to="/random" className={classes.anchor}> Show Random </Link>
+          </Typography>
+
           <div className={classes.grow} />
           <div className={classes.search}>
             <div className={classes.searchIcon}>

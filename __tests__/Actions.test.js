@@ -51,7 +51,7 @@ describe('Actions', () => {
       const expectedActionAllCards = {
         type: actionTypes.ALL_CARDS,
       };
-      expect(allCards(sampleCard)).toEqual(expectedActionAllCards);
+      expect(allCards()).toEqual(expectedActionAllCards);
     });
   });
 
@@ -60,7 +60,7 @@ describe('Actions', () => {
       const expectedActionTotalCards = {
         type: actionTypes.TOTAL_CARDS,
       };
-      expect(totalCards(sampleCard)).toEqual(expectedActionTotalCards);
+      expect(totalCards()).toEqual(expectedActionTotalCards);
     });
   });
 
@@ -69,7 +69,7 @@ describe('Actions', () => {
       const expectedActionShowRandomBoolean = {
         type: actionTypes.SHOW_RANDOM_BOOLEAN,
       };
-      expect(showRandomBoolean(sampleCard)).toEqual(expectedActionShowRandomBoolean);
+      expect(showRandomBoolean()).toEqual(expectedActionShowRandomBoolean);
     });
   });
 });

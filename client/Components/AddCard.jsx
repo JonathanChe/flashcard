@@ -26,12 +26,6 @@ const styles = {
   button: {
     marginTop: '1em',
   },
-  inputStyle: {
-    flex: '1 0 auto',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
 };
 
 /* eslint-disable */
@@ -50,7 +44,6 @@ class AddCard extends Component {
             name="word"
             component={TextField}
             label="word"
-            className={classes.inputStyle}
           />
           <Field
             name="type"

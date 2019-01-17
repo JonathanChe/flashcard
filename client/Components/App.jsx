@@ -1,7 +1,10 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import SearchAppBar from './NavBar';
 import Flashcards from './FlashCards';
 import AddCard from './AddCard';
+import FlashCard from './FlashCard';
+
 
 const App = (props) => {
 
@@ -10,11 +13,15 @@ const App = (props) => {
   };
 
   return (
-    <div>
-      <SearchAppBar />
-      <Flashcards />
-      <AddCard onSubmit={handleSubmit} />
-    </div>
+    <Router>
+      <div>
+        <SearchAppBar />
+        <Route exact path="/" component={Flashcards} />
+        <Route path="/addCard" component={AddCard} />
+        <Route path="/random" component={FlashCard} />
+      </div>
+
+    </Router>
   );
 };
 
