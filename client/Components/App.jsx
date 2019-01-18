@@ -16,9 +16,11 @@ const App = (props) => {
     <Router>
       <div>
         <SearchAppBar />
-        <Route exact path="/" component={Flashcards} />
+        <Route exact path="/" component={FlashCard} />
         <Route path="/addCard" component={AddCard} />
         <Route path="/random" component={FlashCard} />
+        <Route path="/allCards" component={Flashcards} />
+
       </div>
 
     </Router>

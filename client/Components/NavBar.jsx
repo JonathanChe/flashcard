@@ -94,6 +94,10 @@ function SearchAppBar(props) {
             <Link to="/random" className={classes.anchor}> Show Random </Link>
           </Typography>
 
+          <Typography className={classes.button}>
+            <Link to="/allCards" className={classes.anchor}> All Cards </Link>
+          </Typography>
+
           <div className={classes.grow} />
           <div className={classes.search}>
             <div className={classes.searchIcon}>

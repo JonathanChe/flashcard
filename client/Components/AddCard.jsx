@@ -21,7 +21,7 @@ const styles = {
     flexDirection: 'column',
   },
   title: {
-    paddingTop: '0.5em',
+    paddingTop: '50px',
   },
   button: {
     marginTop: '1em',
@@ -35,36 +35,38 @@ class AddCard extends Component {
     const { classes, handleSubmit } = this.props;
 
     return (
-      <Paper className={classes.paper}>
-        <Typography align="center" gutterBottom variant="h2" className={classes.title}>
-          Create New Card
-        </Typography>
-        <form onSubmit={handleSubmit} className={classes.form}>
-          <Field
-            name="word"
-            component={TextField}
-            label="word"
-          />
-          <Field
-            name="type"
-            component={TextField}
-            label="type"
-          />
-          <Field
-            name="definition"
-            component={TextField}
-            label="definition"
-          />
-          <Field
-            name="sentence"
-            component={TextField}
-            label="sentence"
-          />
-          <Button type="submit" size="large" color="primary" variant="contained" className={classes.button}>
-            Create
-          </Button>
-        </form>
-      </Paper>
+      <div className={classes.title}>
+        <Paper className={classes.paper}>
+          <Typography align="center" gutterBottom variant="h2" className={classes.title}>
+            Create New Card
+          </Typography>
+          <form onSubmit={handleSubmit} className={classes.form}>
+            <Field
+              name="word"
+              component={TextField}
+              label="word"
+            />
+            <Field
+              name="type"
+              component={TextField}
+              label="type"
+            />
+            <Field
+              name="definition"
+              component={TextField}
+              label="definition"
+            />
+            <Field
+              name="sentence"
+              component={TextField}
+              label="sentence"
+            />
+            <Button type="submit" size="large" color="primary" variant="contained" className={classes.button}>
+              Create
+            </Button>
+          </form>
+        </Paper>
+      </div>
     );
   }
 }
