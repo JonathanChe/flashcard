@@ -1,8 +1,19 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
+import { connect } from 'react-redux';
 import FlashCard from './FlashCard';
 
+const mapStateToProps = state => ({
+  allFlashcards: state.mainReducer.allCards,
+});
+
 const FlashCards = (props) => {
+  const { allFlashcards } = props;
+
+  const Cards = allFlashcards.map((card, idx) => (
+    <FlashCard card={card} key={idx} />
+  ));
+
   return (
     <div>
       <Grid container spacing={24} style={{ padding: 24 }}>
@@ -14,4 +25,4 @@ const FlashCards = (props) => {
   );
 };
 
-export default FlashCards;
+export default connect(mapStateToProps, null)(FlashCards);

@@ -26,8 +26,14 @@ app.post('/addCard', (req, res) => {
   const { word, type, definition, sentence } = req.body;
   const date = new Date();
   db.one('INSERT INTO "Cards"("word", "type", "definition", "sentence", "timestamp") VALUES($1, $2, $3, $4, $5) RETURNING *', [word, type, definition, sentence, date])
-    .then(data => console.log('successfully created card', data))
+    .then(data => console.log('successfully created card'))
     .catch(err => console.error('error creating card ', err));
+});
+
+app.get('/addCard', (req, res) => {
+  db.query('SELECT * FROM "Cards"')
+    .then(data => res.json(data))
+    .catch(err => console.error('Error fetching all cards ', err));
 });
 
 // start server
