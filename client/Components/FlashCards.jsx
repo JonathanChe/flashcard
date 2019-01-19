@@ -10,18 +10,21 @@ const mapStateToProps = state => ({
 const FlashCards = (props) => {
   const { allFlashcards } = props;
 
-  const Cards = allFlashcards.map((card, idx) => (
-    <FlashCard card={card} key={idx} />
+  const Cards = allFlashcards.map(card => (
+    <FlashCard card={card} key={card._cardID} id={card._cardID}/>
   ));
 
   return (
-    <div>
-      <Grid container spacing={24} style={{ padding: 24 }}>
-        <Grid item xs={12} sm={6} lg={4} xl={3}>
-          <FlashCard />
-        </Grid>
+    <Grid
+      container
+      direction="row"
+      justify="center"
+      alignItems="center"
+    >
+      <Grid item>
+        {Cards}
       </Grid>
-    </div>
+    </Grid>
   );
 };
 

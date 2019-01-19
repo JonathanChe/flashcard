@@ -7,6 +7,8 @@ import {
   Typography,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const styles = {
   card: {
@@ -20,21 +22,42 @@ const styles = {
   center: {
     justifyContent: 'center',
   },
+  anchor: {
+    textDecoration: 'none',
+    color: 'blue',
+    fontweight: 'bold',
+  },
 };
 
 const FlashCard = (props) => {
-  const { classes } = props;
+  const { classes, card } = props;
+
+  const deleteItem = (id) => {
+    console.log('checking delete ', id);
+    axios.put('http://localhost:7777/deleteCard', {
+      data: { id },
+    });
+  }
 
   return (
     <div className={classes.spacing}>
       <Card className={classes.card}>
         <CardContent>
           <Typography className={classes.spacing} gutterBottom variant="headline" component="h1" align="center">
-            Word
+            {card.word}
           </Typography>
         </CardContent>
         <CardActions className={classes.center}>
-          <Button size="medium" color="primary">Check Answer</Button>
+          <Link className={classes.anchor} to="/:id">Check Answer</Link>
+        </CardActions>
+        <CardActions className={classes.center}>
+          <Button
+            size="small"
+            color="primary"
+            onClick={() => {
+              deleteItem(card._cardID)
+            }}
+          >Delete</Button>
         </CardActions>
       </Card>
     </div>

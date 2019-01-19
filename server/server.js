@@ -36,5 +36,13 @@ app.get('/addCard', (req, res) => {
     .catch(err => console.error('Error fetching all cards ', err));
 });
 
+app.put('/deleteCard', (req, res) => {
+  const { data: { id } } = req.body;
+  console.log('checking id ', id);
+  db.query(`DELETE FROM "Cards" WHERE "_cardID" =${id}`)
+    .then(res => console.log('success'))
+    .catch(err => console.error('Error deleting ', err));
+});
+
 // start server
 app.listen(port, () => console.log(`listening on port ${port}`));
