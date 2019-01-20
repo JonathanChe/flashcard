@@ -16,16 +16,6 @@ describe('Actions', () => {
     definition: 'Present participle of test',
   };
 
-  describe('Action: addCard', () => {
-    it('should create an action to add a card', () => {
-      const expectedActionAddCard = {
-        type: actionTypes.ADD_CARD,
-        payload: sampleCard,
-      };
-      expect(addCard(sampleCard)).toEqual(expectedActionAddCard);
-    });
-  });
-
   describe('Action: displayRandomCard', () => {
     it('should create an action to display a random card', () => {
       const expectedActionDisplayRandomCard = {
@@ -43,24 +33,6 @@ describe('Actions', () => {
         payload: sampleCard,
       };
       expect(displaySelectedCard(sampleCard)).toEqual(expectedActionADisplaySelectedCard);
-    });
-  });
-
-  describe('Action: allCards', () => {
-    it('should create an action to display all cards', () => {
-      const expectedActionAllCards = {
-        type: actionTypes.ALL_CARDS,
-      };
-      expect(allCards()).toEqual(expectedActionAllCards);
-    });
-  });
-
-  describe('Action: totalCards', () => {
-    it('should create an action to get the number of all cards', () => {
-      const expectedActionTotalCards = {
-        type: actionTypes.TOTAL_CARDS,
-      };
-      expect(totalCards()).toEqual(expectedActionTotalCards);
     });
   });
 
