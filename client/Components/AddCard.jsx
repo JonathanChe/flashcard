@@ -26,6 +26,9 @@ const styles = {
   button: {
     marginTop: '1em',
   },
+  width: {
+    width: '75%',
+  },
 };
 
 /* eslint-disable */
@@ -45,21 +48,25 @@ class AddCard extends Component {
               name="word"
               component={TextField}
               label="word"
+              className={classes.width}
             />
             <Field
               name="type"
               component={TextField}
               label="type"
+              className={classes.width}
             />
             <Field
               name="definition"
               component={TextField}
               label="definition"
+              className={classes.width}
             />
             <Field
               name="sentence"
               component={TextField}
               label="sentence"
+              className={classes.width}
             />
             <Button type="submit" size="large" color="primary" variant="contained" className={classes.button}>
               Create

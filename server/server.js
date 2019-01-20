@@ -38,7 +38,6 @@ app.get('/addCard', (req, res) => {
 
 app.put('/deleteCard', (req, res) => {
   const { data: { id } } = req.body;
-  console.log('checking id ', id);
   db.query(`DELETE FROM "Cards" WHERE "_cardID" =${id}`)
     .then(res => console.log('success'))
     .catch(err => console.error('Error deleting ', err));

@@ -33,11 +33,10 @@ const FlashCard = (props) => {
   const { classes, card } = props;
 
   const deleteItem = (id) => {
-    console.log('checking delete ', id);
     axios.put('http://localhost:7777/deleteCard', {
       data: { id },
     });
-  }
+  };
 
   return (
     <div className={classes.spacing}>
@@ -48,7 +47,7 @@ const FlashCard = (props) => {
           </Typography>
         </CardContent>
         <CardActions className={classes.center}>
-          <Link className={classes.anchor} to="/:id">Check Answer</Link>
+          <Link className={classes.anchor} to={`/answer/${card._cardID}`}>Check Answer</Link>
         </CardActions>
         <CardActions className={classes.center}>
           <Button
@@ -57,7 +56,9 @@ const FlashCard = (props) => {
             onClick={() => {
               deleteItem(card._cardID)
             }}
-          >Delete</Button>
+          >
+            Delete
+          </Button>
         </CardActions>
       </Card>
     </div>

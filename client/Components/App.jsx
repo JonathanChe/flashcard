@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 import SearchAppBar from './NavBar';
 import Flashcards from './FlashCards';
 import AddCard from './AddCard';
-import FlashCard from './FlashCard';
 import * as actions from '../Actions/actions';
+import Random from './Random';
+import ShowCard from './ShowCard';
 
 const mapStateToProps = state => ({
   totalCards: state.mainReducer.totalCards,
@@ -47,8 +48,9 @@ class App extends Component {
             path="/addCard"
             render={(props) => <AddCard {...props} onSubmit={this.handleSubmit} />}
           />
-          <Route path="/random" component={FlashCard} />
+          <Route path="/random" component={Random} />
           <Route path="/allCards" component={Flashcards} />
+          <Route path="/answer/:id" component={ShowCard} />
         </div>
 
       </Router>
